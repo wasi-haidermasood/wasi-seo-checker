@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>FreeSEO — Free On-Page SEO Checker</title>
+  <meta name="description" content="FreeSEO — Free, fast, and privacy-first on-page SEO checker. Analyze titles, meta, headings, images, links, readability and export a PDF report." />
+  <meta name="theme-color" content="#6b46c1">
+  <meta property="og:title" content="FreeSEO — Free On-Page SEO Checker">
+  <meta property="og:description" content="Free, fast, and privacy-first on-page SEO checker. No APIs, export PDF, mobile-friendly, and free to use.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/logo.svg">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="light">
+  <header class="topbar">
+    <div class="brand">
+      <img src="assets/logo.svg" alt="FreeSEO logo" class="logo">
+      <h1>FreeSEO</h1>
+    </div>
+    <div class="actions">
+      <button id="theme-toggle" aria-label="Toggle theme">🌙</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h2>Free On-Page SEO Checker — Instant, No-API, & Privacy-First</h2>
+      <p>Paste a URL below or enter HTML to run a full on-page audit. Export results as a PDF and get actionable suggestions.</p>
+      <div class="cta">
+        <input id="target-url" placeholder="https://example.com" aria-label="Target URL">
+        <button id="analyze-btn">Analyze</button>
+        <button id="sample-btn">Analyze Sample Page</button>
+      </div>
+      <small class="muted">No third-party APIs — all analysis is performed by this app and/or your browser.</small>
+    </section>
+
+    <section id="results" class="results hidden">
+      <div class="results-header">
+        <h3>SEO Audit Results</h3>
+        <div class="result-actions">
+          <button id="download-pdf">Export PDF</button>
+          <button id="rerun">Rerun</button>
+        </div>
+      </div>
+      <div id="metrics" class="metrics-grid">
+        <!-- Metric cards filled by script.js -->
+      </div>
+
+      <section class="links-section">
+        <h4>Links (first 30)</h4>
+        <div id="links-list"></div>
+      </section>
+    </section>
+
+    <section id="manual-html" class="manual hidden">
+      <h4>Analyze HTML directly</h4>
+      <textarea id="html-input" placeholder="Paste HTML here..."></textarea>
+      <button id="analyze-html-btn">Analyze HTML</button>
+    </section>
+
+    <section class="features">
+      <h4>Features</h4>
+      <ul>
+        <li>Title &amp; meta checks, H1/H2 presence</li>
+        <li>Image ALT tag checks</li>
+        <li>Readability (Flesch–Kincaid)</li>
+        <li>Link counts and broken-link scanning (first 30 links)</li>
+        <li>Word count &amp; keyword density</li>
+        <li>Mobile responsiveness check (viewport)</li>
+        <li>Export PDF report (in-browser)</li>
+      </ul>
+    </section>
+
+    <section class="blog-teaser">
+      <h4>From our blog</h4>
+      <article>
+        <h5><a href="pages/blog.html">How to fix the top 10 on-page SEO issues (free checklist)</a></h5>
+        <p>Practical step-by-step to fix issues found by FreeSEO — perfect for beginners and ecommerce sites.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="left">
+      <img src="assets/logo.svg" alt="FreeSEO logo" class="logo-sm">
+      <p>FreeSEO — Free, privacy-first on-page SEO audits.</p>
+    </div>
+    <div class="right">
+      <a href="pages/contact.html">Contact</a> · <a href="pages/privacy.html">Privacy Policy</a> · <a href="pages/terms.html">Terms</a>
+    </div>
+  </footer>
+
+  <template id="metric-card">
+    <div class="card metric">
+      <div class="card-header">
+        <h5 class="metric-title"></h5>
+        <div class="metric-score">--</div>
+      </div>
+      <div class="card-body">
+        <div class="progress-wrap" aria-hidden="true">
+          <div class="progress-bar"></div>
+        </div>
+        <div class="metric-details"></div>
+      </div>
+    </div>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+</html>

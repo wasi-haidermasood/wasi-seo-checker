@@ -1,0 +1,94 @@
+/* FreeSEO — styles.css
+   Modern, responsive, light/dark theme, animated progress bars
+   Commented for easy editing.
+*/
+
+:root{
+  --bg: #ffffff;
+  --card: #f6f6fb;
+  --text: #111827;
+  --muted: #6b7280;
+  --accent: linear-gradient(90deg,#7c3aed,#06b6d4);
+  --primary: #6b46c1;
+  --glass: rgba(255,255,255,0.6);
+}
+
+body.dark {
+  --bg: #0b1220;
+  --card: #0f1724;
+  --text: #e6eef8;
+  --muted: #9aa4b2;
+  --primary: #8b5cf6;
+  --glass: rgba(255,255,255,0.04);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: Inter, Poppins, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background:var(--bg);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  transition:background .25s, color .25s;
+}
+
+.topbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 24px;
+  border-bottom:1px solid rgba(0,0,0,0.04);
+  background: linear-gradient(90deg, rgba(123,31,162,0.06), rgba(6,182,212,0.03));
+}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{width:48px;height:48px}
+.logo-sm{width:36px;height:36px}
+.topbar h1{font-size:18px;margin:0}
+
+.container{max-width:1100px;margin:28px auto;padding:0 20px}
+.hero{background:var(--card);padding:22px;border-radius:12px;box-shadow:0 6px 24px rgba(9,30,66,0.08)}
+.hero h2{margin:0 0 8px 0}
+.cta{display:flex;gap:8px;margin-top:12px}
+.cta input{flex:1;padding:12px 14px;border-radius:8px;border:1px solid rgba(0,0,0,0.06);outline:none}
+.cta button{padding:11px 14px;border-radius:8px;border:0;background:var(--primary);color:white;cursor:pointer;box-shadow:0 6px 18px rgba(107,70,193,0.18)}
+.muted{color:var(--muted);font-size:13px;margin-top:6px}
+
+.results{margin-top:20px}
+.results-header{display:flex;justify-content:space-between;align-items:center}
+.metrics-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px;margin-top:12px}
+
+.card{background:var(--card);padding:12px;border-radius:12px;box-shadow:0 6px 18px rgba(11,22,40,0.04)}
+.card-header{display:flex;justify-content:space-between;align-items:center}
+.metric-title{margin:0;font-size:14px}
+.metric-score{font-weight:700;font-size:18px;color:var(--primary)}
+
+.progress-wrap{height:10px;background:rgba(11,22,40,0.04);border-radius:999px;margin:10px 0;overflow:hidden}
+.progress-bar{height:100%;width:0%;border-radius:999px;background:linear-gradient(90deg,#7c3aed,#06b6d4);transition:width 800ms cubic-bezier(.2,.9,.2,1)}
+
+.metric-details{font-size:13px;color:var(--muted)}
+
+.hidden{display:none}
+
+/* links list */
+.links-section{margin-top:18px}
+.links-section .link-row{padding:8px;border-radius:8px;background:rgba(0,0,0,0.02);margin-bottom:8px;display:flex;justify-content:space-between;align-items:center}
+.links-section a{color:var(--primary);text-decoration:none}
+
+/* manual html */
+.manual textarea{width:100%;min-height:160px;padding:12px;border-radius:8px;border:1px solid rgba(0,0,0,0.06);background:transparent;color:inherit}
+
+/* features & blog */
+.features, .blog-teaser{margin-top:18px;background:var(--card);padding:12px;border-radius:12px}
+
+/* footer */
+.site-footer{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;margin-top:28px;border-top:1px solid rgba(0,0,0,0.04)}
+.site-footer a{color:var(--primary);text-decoration:none}
+
+/* responsive */
+@media (max-width:640px){
+  .cta{flex-direction:column}
+  .topbar{padding:12px}
+  .container{margin:12px auto}
+}
